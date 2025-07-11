@@ -36,8 +36,10 @@ Compilation
 + Requirements:
   -	A computer with a CUDA-enabled GPU (https://developer.nvidia.com/cuda-gpus)
   -	A C/C++ compiler (e.g., Microsoft Visual Studio for Windows, and gcc/g++ for Linux/Unix) installed and tested
-  -	Nvidia CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) installed and tested
+  -	Nvidia CUDA Toolkit (https://developer.nvidia.com/cuda-downloads) installed and tested.
+  - Conda specific builds of Nvidia CUDA Toolkit work as well. They can be linked as shown in the command below.
   -	Geospatial Data Abstraction Library (GDAL, http://gdal.org) installed and tested
+  
 + For the Windows operating system (using MS Visual Studio as an example)
   1. Open all the source codes in Visual Studio
   2. Click menu Project -> Properties -> VC++ Directories -> Include Directories, and add the “include” directory of GDAL (e.g., C:\GDAL\include\)
@@ -45,9 +47,15 @@ Compilation
   4. Click menu Build -> Build Solution  
   Once successfully compiled, an executable file, cuESTARFM.exe, is created.
 + For the Linux/Unix operating system (using the CUDA compiler --- nvcc)  
-In a Linux/Unix terminal, type in: 
-  - $ cd /the-directory-of-source-codes/
-  - $ nvcc -o cuESTARFM kernel.cu cuLayer.cpp cuESTARFM_util.cpp trans.cpp -lgdal  
+In a Linux/Unix terminal, type in:
+```
+  $ cd /the-directory-of-source-codes/
+  $ nvcc -O3 -std=c++14 -o cuESTARFM \
+    kernel.cu cuLayer.cpp cuESTARFM_util.cpp trans.cpp \
+    -I$CONDA_PREFIX/include \
+    -I$CONDA_PREFIX/include/gdal \
+    -L$CONDA_PREFIX/lib -lgdal
+```
   Once successfully compiled, an executable file, cuESTARFM, is created.
   
 Usage 

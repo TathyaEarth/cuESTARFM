@@ -245,7 +245,7 @@ CuLayer::CuLayer()
 
 	}
 	
-	char* findImageTypeGDAL(std::string DstImgFileName)
+	const char* findImageTypeGDAL(std::string DstImgFileName)
 	{
 		int index = DstImgFileName.find_last_of('.');
 		std::string dstExtension = DstImgFileName.substr(index + 1, DstImgFileName.length() - index - 1);
@@ -303,10 +303,16 @@ CuLayer::CuLayer()
 		for (int b=0;b<this->bandCount;b++)
 	{
 		GDALRasterBand* HOut =  pMemDataSet->GetRasterBand(b+1);
-		HOut->RasterIO(GF_Write,0,0,this->m_width,this->m_height,this->m_data[b],this->m_width,this->m_height,GDT_Float32,0,0);
+		CPLErr err = HOut->RasterIO(GF_Write,0,0,this->m_width,this->m_height,this->m_data[b],this->m_width,this->m_height,GDT_Float32,0,0);
+
+		if (err != CE_None) {
+			std::cerr << "Error writing band " << b << std::endl;
+			return -1;
+			}
+		
 	}
 
 		GDALClose(pMemDataSet);
 		GetGDALDriverManager()->DeregisterDriver(pMemDriver);
-
+		return 0;
 	}

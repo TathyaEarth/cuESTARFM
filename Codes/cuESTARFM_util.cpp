@@ -28,7 +28,8 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
   char readpath[1000];
   string argName;
   string t;
-  char  *separator = "= ,";
+  char separator_buf[] = "= ,";
+  char  *separator = separator_buf;
   FILE  *in;  
 	//char  buffer[1000] = "\0";
 	if((in=fopen(fname,"r"))==NULL) 
@@ -48,7 +49,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 		nn++;
 		if(nn>1000)
 		{
-			cerr<<"ÅäÖÃÎÄ¼þÓ¦¸ÃÓÃESTARFM_PARAMETER_END½áÎ²"<<endl;
+			cerr<<"ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ESTARFM_PARAMETER_ENDï¿½ï¿½Î²"<<endl;
 				break;
 		}
 		memset(buffer,0,1000);
@@ -66,7 +67,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 				par->NUM_PAIRS = atoi(tokenptr);
 				if(par->NUM_PAIRS<=1)
 				{
-					cerr<<"²Î¿¼Ó°ÏñÖÁÉÙÁ½¶Ô"<<endl;
+					cerr<<"ï¿½Î¿ï¿½Ó°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"<<endl;
 					return -1;
 				}
 			}
@@ -139,7 +140,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     {
 		if(psensor[0].getHeight()!=psensor[i].getHeight()||psensor[0].getWidth()!=psensor[i].getWidth())
 		{
-			cerr<<"ÊäÈëÓ°ÏñÍ¼·ù·¶Î§²»Æ¥Åä"<<endl;
+			cerr<<"ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½Æ¥ï¿½ï¿½"<<endl;
 			return -1;
 		}
 	}
