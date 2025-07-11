@@ -9,17 +9,17 @@ ESTARFM_PARAMETER_START
 
 # The input Landsat images
 # File names are separated by space
-  IN_PAIR_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/yawata/s2-train/S2_coreg_fusion_shape_52SFC_2025-06-19.tif /home/ubuntu/Gunjan/Output/yawata/s2-train/S2_coreg_fusion_shape_52SFC_2025-06-29.tif 
+  IN_PAIR_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/yawata/s2-train/S2_coreg_fusion_shape_52SFC_2025-06-19.tif /home/ubuntu/Gunjan/Output/yawata/s2-train/S2_coreg_fusion_shape_52SFC_2025-06-29.tif
 
 # The MODIS images for the prediction dates
 # Multiple images can be given
 # File names are separated by space
-  IN_PDAY_MODIS_FNAME = /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-08.tif /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-06.tif /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-03.tif 
+  IN_PDAY_MODIS_FNAME = /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-08.tif /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-06.tif /home/ubuntu/Gunjan/Output/yawata/s3-train/S3_coreg_fusion_shape_2025-07-03.tif
 
 # The output synthetic prediction images
 # Multiple images can be given
 # File names are separated by space
-  OUT_PDAY_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-08-s2-pred.tif /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-06-s2-pred.tif /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-03-s2-pred.tif 
+  OUT_PDAY_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-08-s2-pred.tif /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-06-s2-pred.tif /home/ubuntu/Gunjan/Output/yawata/s2-pred/2025-07-03-s2-pred.tif
 
 # The_width of searching_window
   The_width_of_searching_window = 51
