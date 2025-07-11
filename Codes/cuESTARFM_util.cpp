@@ -49,7 +49,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 		nn++;
 		if(nn>1000)
 		{
-			cerr<<"�����ļ�Ӧ����ESTARFM_PARAMETER_END��β"<<endl;
+			cerr<<"The configuration file should end with ESTARFM_PARAMETER_END"<<endl;
 				break;
 		}
 		memset(buffer,0,1000);
@@ -67,7 +67,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 				par->NUM_PAIRS = atoi(tokenptr);
 				if(par->NUM_PAIRS<=1)
 				{
-					cerr<<"�ο�Ӱ����������"<<endl;
+					cerr<<"At least two pairs of reference images required."<<endl;
 					return -1;
 				}
 			}
@@ -140,7 +140,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     {
 		if(psensor[0].getHeight()!=psensor[i].getHeight()||psensor[0].getWidth()!=psensor[i].getWidth())
 		{
-			cerr<<"����Ӱ��ͼ����Χ��ƥ��"<<endl;
+			cerr<<"The input image range does not match."<<endl;
 			return -1;
 		}
 	}
