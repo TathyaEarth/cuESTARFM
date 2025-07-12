@@ -28,7 +28,8 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
   char readpath[1000];
   string argName;
   string t;
-  char  *separator = "= ,";
+  char separator_buf[] = "= ,";
+  char  *separator = separator_buf;
   FILE  *in;  
 	//char  buffer[1000] = "\0";
 	if((in=fopen(fname,"r"))==NULL) 
@@ -48,7 +49,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 		nn++;
 		if(nn>1000)
 		{
-			cerr<<"配置文件应该用ESTARFM_PARAMETER_END结尾"<<endl;
+			cerr<<"The configuration file should end with ESTARFM_PARAMETER_END"<<endl;
 				break;
 		}
 		memset(buffer,0,1000);
@@ -66,7 +67,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
 				par->NUM_PAIRS = atoi(tokenptr);
 				if(par->NUM_PAIRS<=1)
 				{
-					cerr<<"参考影像至少两对"<<endl;
+					cerr<<"At least two pairs of reference images required."<<endl;
 					return -1;
 				}
 			}
@@ -139,7 +140,7 @@ int parseParameters(char *fname, CuLayer *psensor,PARAMETER *par)
     {
 		if(psensor[0].getHeight()!=psensor[i].getHeight()||psensor[0].getWidth()!=psensor[i].getWidth())
 		{
-			cerr<<"输入影像图幅范围不匹配"<<endl;
+			cerr<<"The input image range does not match."<<endl;
 			return -1;
 		}
 	}

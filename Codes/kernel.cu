@@ -1019,7 +1019,7 @@ void Re_fusion3(CuLayer *psensor,PARAMETER *par)
 	}
 	
 	GDALDataset *LandsatDs;
-	char* driverName = "GTiff";
+	const char* driverName = "GTiff";
 	GDALDriver *pDriver = (GDALDriver*)GDALGetDriverByName(driverName);
 	LandsatDs = pDriver->Create(BufferOut,width,height,BandNum,GDT_Float64,NULL);
 	double* geos=new double[6];
