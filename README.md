@@ -62,7 +62,7 @@ Usage
 ========
 + Before running the program, make sure that all Landsat and MODIS images have been pre-processed and co-registered. They must have:
   - the same spatial resolution (i.e., Landsat resolution --- 30m)
-  - the same image size (i.e., numbers of rows and columns)
+  - the same image size and number of bands (i.e., numbers of rows and columns). Current implementation has restricted this to 1 band to deal with dedicated masked band in Landsat LST.
   - the same map projection
 + A text file must be manually created to specify the input and output images, and other parameters for the ESTARFM model.  
 Example (# for comments):

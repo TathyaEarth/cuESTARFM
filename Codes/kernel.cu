@@ -947,7 +947,8 @@ void Re_fusion3(CuLayer *psensor,PARAMETER *par)
 	int width,height,BandNum;
 	width = Landsat0->GetRasterXSize();
 	height = Landsat0->GetRasterYSize();
-	BandNum = Landsat0->GetRasterCount();
+	// BandNum = Landsat0->GetRasterCount();
+	BandNum = 1;
 	//height=2000;
    // width=2000;
 	float** BufferLandsat_0 = new float*[BandNum];
