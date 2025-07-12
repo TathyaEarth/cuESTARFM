@@ -1,0 +1,39 @@
+ESTARFM_PARAMETER_START
+
+# The number of input pairs of Landsat-MODIS images (>=2)
+  NUM_IN_PAIRS = 2
+
+# The input MODIS images 
+# File names are separated by space
+  IN_PAIR_MODIS_FNAME = /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/modis-train/2025-05-08_lst_day_1km_Cropped__shifted_to__2022-04-14-007070-landsat-lst.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/modis-train/2025-05-16_lst_day_1km_Cropped__shifted_to__2022-04-14-007070-landsat-lst.tif 
+
+# The input Landsat images
+# File names are separated by space
+  IN_PAIR_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/landsat-train/2025-05-08-007069-landsat-lst.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/landsat-train/2025-05-16-007069-landsat-lst.tif 
+
+# The MODIS images for the prediction dates
+# Multiple images can be given
+# File names are separated by space
+  IN_PDAY_MODIS_FNAME = /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/modis-train/2025-07-07_lst_day_1km_Cropped__shifted_to__2022-04-14-007070-landsat-lst.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/modis-train/2025-07-04_lst_day_1km_Cropped__shifted_to__2022-04-14-007070-landsat-lst.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/modis-train/2025-07-02_lst_day_1km_Cropped__shifted_to__2022-04-14-007070-landsat-lst.tif 
+
+# The output synthetic prediction images
+# Multiple images can be given
+# File names are separated by space
+  OUT_PDAY_LANDSAT_FNAME = /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/landsat-pred/2025-07-07-pred-landsat.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/landsat-pred/2025-07-04-pred-landsat.tif /home/ubuntu/Gunjan/Output/Minsur-pisco-landsat/landsat-pred/2025-07-02-pred-landsat.tif 
+
+# The_width of searching_window
+  The_width_of_searching_window = 51
+
+# Assumed_number of classifications
+  Assumed_number_of_classifications = 6
+
+# Landsat sensor error 
+  sensor_uncertain = 0.0028
+# NODATA
+  NODATA = 0
+# Output image format (optional)
+# Will be used when the extension of the output files
+# is not given
+  G_Type = GTIff
+
+ESTARFM_PARAMETER_END

@@ -205,7 +205,8 @@ CuLayer::CuLayer()
 
 		this->m_width = ReadDataSet->GetRasterXSize();
 		this->m_height= ReadDataSet->GetRasterYSize();
-		this->bandCount = ReadDataSet->GetRasterCount();
+		// this->bandCount = ReadDataSet->GetRasterCount();
+		this->bandCount = 1;
 		
 		ReadDataSet->GetGeoTransform(this->m_adfGeoTransform);
 
